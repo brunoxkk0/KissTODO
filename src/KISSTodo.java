@@ -13,22 +13,28 @@ public class KISSTodo {
         Loop:
         while (true){
 
-            for(int index = 1; index <= todo.size(); index++)
-                System.out.println(index + " " + todo.get(index - 1));
+            for(int index = 0; index < todo.size(); index++){
+                System.out.printf("%d %s\n", (index + 1), todo.get(index));
+            }
 
-            String[] entrada = scanner.nextLine().split(" ", 2);
+            String entrada = scanner.nextLine();
+            String[] dados = entrada.split(" ", 2);
 
-            switch (entrada[0]){
+            switch (dados[0]){
+
                 case "quit" -> {
                     break Loop;
                 }
+
                 case "add" -> {
-                    todo.add(entrada[1]);
+                    todo.add(dados[1]);
                 }
+
                 case "mark" -> {
-                    int pos = Integer.parseInt(entrada[1]) - 1;
+                    int pos = Integer.parseInt(dados[1]) - 1;
                     todo.set(pos, "✓ " + todo.get(pos));
                 }
+
             }
         }
     }
