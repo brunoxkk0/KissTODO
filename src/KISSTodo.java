@@ -17,6 +17,8 @@ public class KISSTodo {
                 System.out.printf("%d %s\n", (index + 1), todo.get(index));
             }
 
+            System.out.println("COMMANDS: [ quit | add <message> | mark <task number> ]");
+
             String entrada = scanner.nextLine();
             String[] dados = entrada.split(" ", 2);
 
